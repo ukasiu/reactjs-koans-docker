@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  server:
+    image: ukasiu/reactjs-koans-docker
+    volumes:
+      - ".:/koans"
+    command: /bin/bash /server-entrypoint.sh
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+  watch-tests:
+    image: ukasiu/reactjs-koans-docker
+    volumes:
+      - ".:/koans"
+    command: /bin/bash /watch-entrypoint.sh
